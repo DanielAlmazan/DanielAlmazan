@@ -37,7 +37,11 @@ struct Dev {
     var location: String
     var education: [Education]
 }
+```
 
+<details open><summary>me.swift</summary>
+
+```swift
 let danielAlmazan = Dev(
     name: "Daniel",
     middleName: "Enrique",
@@ -79,6 +83,7 @@ let danielAlmazan = Dev(
 
 print(danielAlmazan)
 ```
+</details>
 
 ## Hello, world! 👋
 
