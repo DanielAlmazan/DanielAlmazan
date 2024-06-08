@@ -23,54 +23,55 @@ struct Education {
     let title: String
     let type: String
     let startDate: Date
-    let endDate: Date
+    let endDate: Date?
     let school: String
-    let EQFLevel: String // European Qualification Framework
+    let EQFLevel: Int // European Qualification Framework
     let mainSkills: [String: [String]]
 }
 
 struct Dev {
     let name: String
-    let middleName: String
+    let middleName: String?
     let surnames: [String]
     let birthdate: Date
     var location: String
-    var education: [Education]
+    var education: [Education]?
+    var softSkills: [String]?
 }
 ```
 
-<details open><summary>me.swift</summary>
+<details open><summary>me.swift</summary> (you can fold me)
 
 ```swift
-let danielAlmazan = Dev(
+var danielAlmazan = Dev(
     name: "Daniel",
     middleName: "Enrique",
     surnames: ["Almazán", "Sellés"],
-    birthdate: Date(timeIntervalSince1970: 707529600),
+    birthdate: Date(timeIntervalSince1970: 707529600), // June 3, 1992
     location: "Alicante, Spain",
     education: [
         Education(
             title: "Multiplatform Application Development",
             type: "Further Education",
-            startDate: Date(timeIntervalSince1970: 1661990400),
-            endDate: Date(timeIntervalSince1970: 1717200000),
+            startDate: Date(timeIntervalSince1970: 1661990400), // September 1, 2022
+            endDate: Date(timeIntervalSince1970: 1717200000), // June 1, 2024
             school: "I.E.S. San Vicente",
-            EQFLevel: "EQF Level 5",
+            EQFLevel: 5,
             mainSkills: [
                 "C#":  ["OOP", "Entity Framework", "WPF"],
                 "Java": ["OOP", "JavaFX", "Threads concurrency", "Hibernate", "SpringBoot"],
                 "Android Development": ["Kotlin Activity Views"],
                 "DataBases": ["OracleSQL", "PostgreSQL", "MongoDB"],
-                "Others": ["Odoo", "Python 3"],
+                "Others": ["Odoo", "Python 3", "Docker"],
             ]
         ),
         Education(
             title: "Web Application Development",
             type: "Further Education",
-            startDate: Date(timeIntervalSince1970: 1661990400),
-            endDate: Date(timeIntervalSince1970: 1717200000),
+            startDate: Date(timeIntervalSince1970: 1661990400), // September 1, 2022
+            endDate: Date(timeIntervalSince1970: 1717200000), // June 1, 2024
             school: "I.E.S. San Vicente",
-            EQFLevel: "EQF Level 5",
+            EQFLevel: 5,
             mainSkills: [
                 "HTML/CSS": ["HTML 5", "CSS 3", "SASS", "Bootstrap"],
                 "JavaScript/TypeScript": ["NodeJS", "NestJS", "Angular 17", "Ionic 7"],
@@ -78,8 +79,16 @@ let danielAlmazan = Dev(
                 "Others": ["Docker"],
             ]
         ),
-    ]
+    ],
+    softSkills: nil
 )
+
+danielAlmazan.softSkills = [
+    "sense of humor",
+    "assertive communication",
+    "responsible",
+    "good team player",
+]
 
 print(danielAlmazan)
 ```
@@ -106,12 +115,12 @@ I'm interested in iOS native development, but I'm open to other technologies and
 ## Skills reached during my studies
 
 - **JavaScript & TypeScript:** Node.js, NestJS, Angular17, Ionic
+- **Android:** Kotlin Activity Views
 - **C#:** OOP, WPF, Entity Framework
 - **Java:** OOP, JavaFX, threads concurrency, Hibernate, SpringBoot
 - **PHP:** Symfony
 - **HTML/CSS:** HTML5, CSS3, SASS, Bootstrap
 - **DataBases:** Oracle SQL, PostgreSQL, MongoDB
-- **Android:** Development Kotlin Activity Views
 - **Others:** Odoo, Python3, Docker
 
 ***
